@@ -9,10 +9,12 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 // import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { ListItem, ListItemButton, ListItemIcon } from "@mui/material";
+import { ListItem, ListItemIcon } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/navigation";
+import Logo from "../../assets/img/Logo/wakame-logo.png";
+import Image from "next/image";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false); // State for opening and closing the drawer
@@ -22,20 +24,21 @@ const Header: React.FC = () => {
     setOpen(open);
   };
 
-  const menuItems = ["MENU", "ABOUT", "RESERVATION"]; // Navigation menu items
+  // const menuItems = ["MENU", "ABOUT", "RESERVATION"]; // Navigation menu items
 
   return (
     <>
       <AppBar position="static" sx={{ background: "black", color: "white" }}>
         <Toolbar className="flex justify-between p-4">
           {/* Left Section */}
-          <Box display="flex" alignItems="center" gap={2}>
-            <Typography
-              variant="h6"
-              sx={{ display: { xs: "none", md: "block", cursor: "pointer" } }}
-            >
-              LOGO
-            </Typography>
+          <Box
+            display="flex"
+            alignItems="center"
+            gap={2}
+            sx={{ cursor: "pointer" }}
+            onClick={() => router.push("/")}
+          >
+            <Image src={Logo} alt="Logo" width={80} />
           </Box>
 
           {/* Right Section for Desktop */}
@@ -44,11 +47,43 @@ const Header: React.FC = () => {
             gap={2}
             sx={{ display: { xs: "none", md: "flex" } }}
           >
-            {menuItems.map((item, index) => (
-              <Typography key={index} variant="h6" sx={{ cursor: "pointer" }}>
+            {/* {menuItems.map((item, index) => (
+              <Typography
+                key={index}
+                variant="h6"
+                sx={{ cursor: "pointer" }}
+                onClick={() => console.log(" ---  ", item)}
+              >
                 {item}
               </Typography>
-            ))}
+            ))} */}
+
+            <Typography
+              key={1}
+              variant="h6"
+              sx={{ cursor: "pointer" }}
+              onClick={() => console.log(" ---  ")}
+            >
+              MENU
+            </Typography>
+
+            <Typography
+              key={2}
+              variant="h6"
+              sx={{ cursor: "pointer" }}
+              onClick={() => router.push("about")}
+            >
+              ABOUT
+            </Typography>
+
+            <Typography
+              key={3}
+              variant="h6"
+              sx={{ cursor: "pointer" }}
+              onClick={() => console.log(" ---  RESERVATION ")}
+            >
+              RESERVATION
+            </Typography>
           </Box>
 
           {/* Hamburger Icon for Mobile */}
@@ -94,17 +129,6 @@ const Header: React.FC = () => {
                 <CloseIcon sx={{ color: "white" }} />
               </ListItemIcon>
             </ListItem>
-            {/* {menuItems.map((item, index) => (
-              <ListItem key={index}>
-                <ListItemText
-                  sx={{ alignItems: "center" }}
-                  primary={item}
-                  primaryTypographyProps={{
-                    sx: { textAlign: "center" },
-                  }}
-                />
-              </ListItem>
-            ))} */}
             <ListItem>
               <ListItemText
                 sx={{ alignItems: "center" }}
@@ -114,15 +138,14 @@ const Header: React.FC = () => {
                 }}
               />
             </ListItem>
-            <ListItem component="div" onClick={() => console.log(" ------  ")}>
-              <ListItemButton
+            <ListItem component="div">
+              <ListItemText
                 sx={{ alignItems: "center" }}
                 primary="ABOUT"
                 primaryTypographyProps={{
                   sx: { textAlign: "center" },
                 }}
-                // onClick={() => router.push("/about")}
-                onClick={() => console.log(" item ")}
+                onClick={() => router.push("about")}
               />
             </ListItem>
             <ListItem>
