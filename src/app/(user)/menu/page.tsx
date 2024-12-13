@@ -1,120 +1,137 @@
-"use client"; // Client-side component
-import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+"use client";
+import Menu1 from "../../../assets/menu/1.jpg";
+import Menu2 from "../../../assets/menu/2.jpg";
+import Menu3 from "../../../assets/menu/3.jpg";
+import Menu4 from "../../../assets/menu/4.jpg";
+import Menu5 from "../../../assets/menu/5.jpg";
+import Menu6 from "../../../assets/menu/6.jpg";
+import Menu7 from "../../../assets/menu/7.jpg";
+import Menu8 from "../../../assets/menu/8.jpg";
+import Menu9 from "../../../assets/menu/9.jpg";
+import Menu10 from "../../../assets/menu/10.jpg";
+import Menu11 from "../../../assets/menu/11.jpg";
+import Menu12 from "../../../assets/menu/12.jpg";
+import Menu13 from "../../../assets/menu/13.jpg";
+import Menu14 from "../../../assets/menu/14.jpg";
+import Menu15 from "../../../assets/menu/15.jpg";
+import Menu16 from "../../../assets/menu/16.jpg";
+import Menu17 from "../../../assets/menu/17.jpg";
+import Menu18 from "../../../assets/menu/18.jpg";
+import Menu19 from "../../../assets/menu/19.jpg";
+import Menu20 from "../../../assets/menu/20.jpg";
+import { Box, Button, Grid2, IconButton } from "@mui/material";
 import Image from "next/image";
-// DESSERT
-import Dessert1 from "../../../assets/img/Wakame-PNG/DESSERT/129.png";
-import Dessert2 from "../../../assets/img/Wakame-PNG/DESSERT/130.png";
-import Dessert3 from "../../../assets/img/Wakame-PNG/DESSERT/131.png";
-// SASHIMI
-import Sashimi1 from "../../../assets/img/Wakame-PNG/SASHIMI/311.png";
-import Sashimi2 from "../../../assets/img/Wakame-PNG/SASHIMI/312.png";
-import Sashimi3 from "../../../assets/img/Wakame-PNG/SASHIMI/313.png";
-import Sashimi4 from "../../../assets/img/Wakame-PNG/SASHIMI/314.png";
-// STARTER
-import Starter1 from "../../../assets/img/Wakame-PNG/STARTER/20.png";
-import Starter2 from "../../../assets/img/Wakame-PNG/STARTER/21.png";
-import Starter3 from "../../../assets/img/Wakame-PNG/STARTER/22.png";
-import Starter4 from "../../../assets/img/Wakame-PNG/STARTER/24.png";
-import Starter5 from "../../../assets/img/Wakame-PNG/STARTER/25.png";
-import Starter6 from "../../../assets/img/Wakame-PNG/STARTER/26.png";
-import Starter7 from "../../../assets/img/Wakame-PNG/STARTER/27.png";
-import Starter8 from "../../../assets/img/Wakame-PNG/STARTER/28.png";
-import Starter9 from "../../../assets/img/Wakame-PNG/STARTER/29.png";
-import Starter10 from "../../../assets/img/Wakame-PNG/STARTER/32.png";
-
-// Mock data
-const categories = [
-  {
-    name: "DESSERT",
-    images: [Dessert1, Dessert2, Dessert3],
-  },
-  {
-    name: "SASHIMI",
-    images: [Sashimi1, Sashimi2, Sashimi3, Sashimi4],
-  },
-  {
-    name: "STARTER",
-    images: [
-      Starter1,
-      Starter2,
-      Starter3,
-      Starter4,
-      Starter5,
-      Starter6,
-      Starter7,
-      Starter8,
-      Starter9,
-      Starter10,
-    ],
-  },
-  // Add more categories...
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+const allImages = [
+  { src: Menu1, id: "happy-lunch" },
+  { src: Menu2, id: "" },
+  { src: Menu3, id: "vorspeise" },
+  { src: Menu4, id: "" },
+  { src: Menu5, id: "temaki" },
+  { src: Menu6, id: "sushi-set" },
+  { src: Menu7, id: "veggie-set" },
+  { src: Menu8, id: "veggie-futo-maki" },
+  { src: Menu9, id: "sushimi" },
+  { src: Menu10, id: "nigiri" },
+  { src: Menu11, id: "" },
+  { src: Menu12, id: "crunchy-sushi" },
+  { src: Menu13, id: "wakami-maki" },
+  { src: Menu14, id: "veggie-maki" },
+  { src: Menu15, id: "inside-out" },
+  { src: Menu16, id: "special-role" },
+  { src: Menu17, id: "udon-bowl" }, // Add specific id if needed
+  { src: Menu18, id: "dessert" }, // Add specific id if needed
+  { src: Menu19, id: "" }, // Add specific id if needed
+  { src: Menu20, id: "" }, // Add specific id if needed
 ];
 
-const FoodGallery = () => {
+// Menu categories
+const categories = [
+  { id: "happy-lunch", label: "Happy Lunch" },
+  { id: "vorspeise", label: "Vorspeise" },
+  { id: "temaki", label: "Temaki" },
+  { id: "sushi-set", label: "Sushi Set" },
+  { id: "veggie-set", label: "Veggie Set" },
+  { id: "veggie-futo-maki", label: "Veggie & Futo Maki" },
+  { id: "sashimi", label: "Sashimi" },
+  { id: "nogiri", label: "Nogiri" },
+  { id: "crunchy-sushi", label: "Crunchy Sushi" },
+  { id: "wakami-maki", label: "Wakami Maki" },
+  { id: "vaggie-maki", label: "Vaggie Maki" },
+  { id: "inside-out", label: "I.O. Inside Out" },
+  { id: "special-role", label: "Wakame Special Role" },
+  { id: "udon-bowl", label: "Udone Donburi Bowl" },
+  { id: "dessert", label: "Dessert" },
+  { id: "getranke", label: "Getränke" },
+];
+
+const handleScroll = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const Menu = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "black",
-        color: "white",
-        minHeight: "100vh",
-        padding: "2rem",
-      }}
-    >
-      <Typography
-        variant="h2"
-        align="center"
-        gutterBottom
-        sx={{ fontWeight: "bold" }}
+    <Box>
+      <Grid2
+        container
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+        sx={{ padding: 2 }}
       >
-        Food Gallery
-      </Typography>
-
-      {categories.map((category, index) => (
-        <Box key={index} sx={{ marginBottom: "4rem" }}>
-          {/* Category Title */}
-          <Typography
-            variant="h4"
-            sx={{ fontWeight: "bold", marginBottom: "1.5rem" }}
+        {categories.map((category) => (
+          <Grid2
+            key={category.id}
+            sx={{ display: "flex", justifyContent: "center" }}
           >
-            {category.name}
-          </Typography>
-
-          {/* Images Grid */}
-          <Grid container spacing={2}>
-            {category.images.map((image, imgIndex) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={imgIndex}>
-                <Box
-                  sx={{
-                    position: "relative",
-                    overflow: "hidden",
-                    borderRadius: "8px",
-                    "&:hover img": {
-                      transform: "scale(1.1)", // Zoom effect
-                    },
-                  }}
-                >
-                  <Image
-                    src={image}
-                    alt={`${category.name} ${imgIndex + 1}`}
-                    width={300}
-                    height={200}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      transition: "transform 0.3s ease",
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      ))}
+            <Button
+              variant="outlined"
+              onClick={() => handleScroll(category.id)}
+              sx={{
+                color: "white",
+                fontSize: "0.9rem",
+                textTransform: "capitalize",
+                padding: "6px 12px",
+                border: "1px solid white",
+                background: "rgba(0, 0, 0, 0.7)",
+                borderRadius: "4px",
+              }}
+            >
+              {category.label}
+            </Button>
+          </Grid2>
+        ))}
+      </Grid2>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 3 }}
+      >
+        {allImages?.map((item, index) => (
+          <Box key={index} id={item.id}>
+            <Image key={index} src={item.src} alt={`i-${index}`} />
+          </Box>
+        ))}
+      </Box>
+      <IconButton
+        onClick={scrollToTop}
+        sx={{
+          position: "fixed",
+          bottom: 16,
+          right: 16,
+          backgroundColor: "gray", // Dynamic color
+          color: "white", // Icon color
+          "&:hover": {
+            backgroundColor: "gray", // Optional hover effect
+          },
+        }}
+      >
+        <ArrowUpwardIcon fontSize="small" />
+      </IconButton>
     </Box>
   );
 };
 
-export default FoodGallery;
+export default Menu;

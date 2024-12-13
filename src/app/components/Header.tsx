@@ -62,7 +62,7 @@ const Header: React.FC = () => {
               key={1}
               variant="h6"
               sx={{ cursor: "pointer" }}
-              onClick={() => console.log(" ---  ")}
+              onClick={() => router.push("menu")}
             >
               MENU
             </Typography>
@@ -76,14 +76,14 @@ const Header: React.FC = () => {
               ABOUT
             </Typography>
 
-            <Typography
+            {/* <Typography
               key={3}
               variant="h6"
               sx={{ cursor: "pointer" }}
               onClick={() => console.log(" ---  RESERVATION ")}
             >
               RESERVATION
-            </Typography>
+            </Typography> */}
           </Box>
 
           {/* Hamburger Icon for Mobile */}
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
                 onClick={() => router.push("about")}
               />
             </ListItem>
-            <ListItem>
+            {/* <ListItem>
               <ListItemText
                 sx={{ alignItems: "center" }}
                 primary="RESERVATION"
@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                   sx: { textAlign: "center" },
                 }}
               />
-            </ListItem>
+            </ListItem> */}
           </List>
         </Box>
       </Drawer>
