@@ -136,6 +136,7 @@ const Header: React.FC = () => {
                 primaryTypographyProps={{
                   sx: { textAlign: "center" },
                 }}
+                onClick={() => router.push("menu")}
               />
             </ListItem>
             <ListItem component="div">
