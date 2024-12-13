@@ -31,7 +31,7 @@ const allImages = [
   { src: Menu6, id: "sushi-set" },
   { src: Menu7, id: "veggie-set" },
   { src: Menu8, id: "veggie-futo-maki" },
-  { src: Menu9, id: "sushimi" },
+  { src: Menu9, id: "sashimi" },
   { src: Menu10, id: "nigiri" },
   { src: Menu11, id: "" },
   { src: Menu12, id: "crunchy-sushi" },
@@ -54,15 +54,14 @@ const categories = [
   { id: "veggie-set", label: "Veggie Set" },
   { id: "veggie-futo-maki", label: "Veggie & Futo Maki" },
   { id: "sashimi", label: "Sashimi" },
-  { id: "nogiri", label: "Nogiri" },
+  { id: "nigiri", label: "Nigiri" },
   { id: "crunchy-sushi", label: "Crunchy Sushi" },
   { id: "wakami-maki", label: "Wakami Maki" },
-  { id: "vaggie-maki", label: "Vaggie Maki" },
+  { id: "veggie-maki", label: "Veggie Maki" },
   { id: "inside-out", label: "I.O. Inside Out" },
   { id: "special-role", label: "Wakame Special Role" },
   { id: "udon-bowl", label: "Udone Donburi Bowl" },
   { id: "dessert", label: "Dessert" },
-  { id: "getranke", label: "Getränke" },
 ];
 
 const handleScroll = (id: string) => {
