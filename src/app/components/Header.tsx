@@ -129,24 +129,35 @@ const Header: React.FC = () => {
                 <CloseIcon sx={{ color: "white" }} />
               </ListItemIcon>
             </ListItem>
-            <ListItem>
+            <ListItem
+              onClick={() => {
+                console.log(" Menu ckicked ");
+
+                router.push("menu");
+                toggleDrawer(false);
+              }}
+            >
               <ListItemText
                 sx={{ alignItems: "center" }}
                 primary="MENU"
                 primaryTypographyProps={{
                   sx: { textAlign: "center" },
                 }}
-                onClick={() => router.push("menu")}
               />
             </ListItem>
-            <ListItem component="div">
+            <ListItem
+              component="div"
+              onClick={() => {
+                router.push("about");
+                toggleDrawer(false);
+              }}
+            >
               <ListItemText
                 sx={{ alignItems: "center" }}
                 primary="ABOUT"
                 primaryTypographyProps={{
                   sx: { textAlign: "center" },
                 }}
-                onClick={() => router.push("about")}
               />
             </ListItem>
             {/* <ListItem>
