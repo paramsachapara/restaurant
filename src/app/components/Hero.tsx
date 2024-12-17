@@ -1,13 +1,13 @@
 "use client"; // Client Component
 import React from "react";
 import { Box, Grid } from "@mui/material"; // Box for layout styling
-import HeroImage from "../../assets/img/wakame-6.jpg"; // Main Hero Image
+import HeroImage from "../../assets/img/tinified/wakame-6.jpg"; // Main Hero Image
 import Image from "next/image"; // For image optimization
-import img1 from "../../assets/img/wakame-1.jpg"; // Other images
-import img2 from "../../assets/img/wakame-2.jpg";
-import img3 from "../../assets/img/wakame-3.jpg";
-import img4 from "../../assets/img/wakame-4.jpg";
-import img5 from "../../assets/img/wakame-5.jpg";
+import img1 from "../../assets/img/tinified/wakame-1.jpg"; // Other images
+import img2 from "../../assets/img/tinified/wakame-2.jpg";
+import img3 from "../../assets/img/tinified/wakame-3.jpg";
+import img4 from "../../assets/img/tinified/wakame-4.jpg";
+import img5 from "../../assets/img/tinified/wakame-5.jpg";
 
 const Hero = () => {
   // List of images to display
