@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  // output: "export", // Added this line to enable static export
   images: {
-    domains: ["images.getbento.com"], // Add the domain here
+    // Allow Next.js to serve images from the public folder
+    unoptimized: true, // Disable image optimization (necessary for static export)
+    domains: [], // List of domains if external images are used
   },
+  output: "export", // Ensures compatibility with static hosting
 };
 
 export default nextConfig;

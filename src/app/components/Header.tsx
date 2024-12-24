@@ -13,7 +13,7 @@ import { ListItem, ListItemIcon } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/navigation";
-import Logo from "../../assets/img/Logo/wakame-logo.png";
+import Logo from "../../../public/assets/img/Logo/wakame-logo.png";
 import Image from "next/image";
 
 const Header: React.FC = () => {
@@ -67,14 +67,14 @@ const Header: React.FC = () => {
               MENU
             </Typography>
 
-            <Typography
+            {/* <Typography
               key={2}
               variant="h6"
               sx={{ cursor: "pointer" }}
               onClick={() => router.push("about")}
             >
               ABOUT
-            </Typography>
+            </Typography> */}
 
             {/* <Typography
               key={3}
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                 }}
               />
             </ListItem>
-            <ListItem
+            {/* <ListItem
               component="div"
               onClick={() => {
                 router.push("about");
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
                   sx: { textAlign: "center" },
                 }}
               />
-            </ListItem>
+            </ListItem> */}
             {/* <ListItem>
               <ListItemText
                 sx={{ alignItems: "center" }}
