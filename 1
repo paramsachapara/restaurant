@@ -1,31 +1,140 @@
-Yes, we will need a backend and a database — but only for specific purposes. Here’s what we envision:
+📦 Daily Quiz – Feature Specification (Split by Platform)
+🚗 Part 1: Driver Application (Mobile App)
+🎯 Purpose
 
-✅ What should be stored:
+Provide each Amazon Flex driver with a short, daily micro-training quiz to reinforce delivery best practices and reduce common mistakes.
 
-• Driver progress data
-(e.g. completed quizzes, scores, improvement over time)
-• Quiz history per driver
-(e.g. which questions were answered, correct/incorrect responses)
-• Error archive
-(centralized pool of delivery mistakes linked to quiz questions)
-• Language preferences
-(so the app remembers the selected language per user)
+✅ Functional Overview
 
+Daily Quiz Access
 
-❌ What should not be stored:
+Each driver receives a new quiz once per day.
 
-• No personal data like name, address, phone number
-• No GPS or location tracking
-• No Amazon account details
+Quiz contains 3 to 5 multiple-choice questions.
 
+The quiz is shown in the driver’s selected language.
 
-All data storage must be GDPR-compliant, and ideally anonymized unless the user explicitly consents.
+Question Flow
 
-🔧 Tech suggestion:
+Only one question is shown at a time.
 
-• Lightweight backend (e.g. Firebase, Supabase, or Node.js with PostgreSQL)
-• Local caching for offline use
-• Option to expand to cloud-based analytics later
+After answering a question:
 
+The driver immediately sees if their answer was correct or incorrect.
 
-Let me know if you need a full backend architecture sketch — I can help with that too!
+The correct answer is shown.
+
+A short explanation is displayed (reason for the correct answer).
+
+Driver must then proceed to the next question.
+
+No skipping or going back is allowed.
+
+Quiz Completion
+
+After the final question, a summary screen is shown:
+
+Total questions answered
+
+Number of correct and incorrect answers
+
+(Optional) Daily streak or motivational message
+
+Limits
+
+Each driver can only take the quiz once per day.
+
+The quiz cannot be retaken or reset.
+
+Progress Tracking
+
+The app shows past quiz performance (e.g., streak, total completed, accuracy).
+
+No personal data is stored — tracking is based on an anonymous ID or device token.
+
+🖥️ Part 2: Admin Website (Admin Panel)
+🎯 Purpose
+
+Enable admins to manage the quiz content, track driver engagement, and analyze learning outcomes — all while maintaining GDPR-compliant data practices.
+
+✅ Functional Overview
+
+Question Bank Management
+
+Admins can:
+
+Add, edit, or delete quiz questions.
+
+Define 4 options per question and mark the correct one.
+
+Write a short explanation (reason) shown after answering.
+
+Assign a topic or tag (e.g., “Safe Delivery”, “App Usage”).
+
+Add translations in multiple languages (i18n-ready).
+
+Question Scheduling (Optional)
+
+Questions can be manually assigned to a specific date.
+
+Alternatively, quizzes can be auto-generated daily from the question pool.
+
+Analytics & Reporting
+
+Admins can view performance metrics for each question:
+
+Total attempts
+
+Correct vs incorrect attempts
+
+Accuracy rate
+
+Analytics can be filtered by date, question, language, and topic.
+
+Day-Wise Quiz Logs
+
+Admins can see:
+
+Which questions were served on any specific date
+
+How many drivers attempted each question
+
+Their performance breakdown
+
+Driver Overview
+
+Admins can view all registered/active drivers:
+
+Anonymous ID
+
+First/last active date
+
+Daily streak
+
+Total quizzes completed
+
+Average performance
+
+Language preference
+
+All data is pseudonymized; no names or personal info is stored.
+
+Quote Management Module
+
+Admins can add, update, or delete motivational quotes.
+
+Quotes are used in daily push notifications.
+
+Each quote supports multiple languages.
+
+(Optional) Assign quotes to specific dates or let the system randomize.
+
+🔐 Compliance & Privacy
+
+Fully GDPR-compliant system.
+
+No personal or sensitive data is stored unless explicit consent is given.
+
+Users are identified only via anonymous tokens or device IDs.
+
+All content is translatable, and language preferences are respected across both platforms.
