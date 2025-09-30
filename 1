@@ -1,0 +1,31 @@
+Yes, we will need a backend and a database — but only for specific purposes. Here’s what we envision:
+
+✅ What should be stored:
+
+• Driver progress data
+(e.g. completed quizzes, scores, improvement over time)
+• Quiz history per driver
+(e.g. which questions were answered, correct/incorrect responses)
+• Error archive
+(centralized pool of delivery mistakes linked to quiz questions)
+• Language preferences
+(so the app remembers the selected language per user)
+
+
+❌ What should not be stored:
+
+• No personal data like name, address, phone number
+• No GPS or location tracking
+• No Amazon account details
+
+
+All data storage must be GDPR-compliant, and ideally anonymized unless the user explicitly consents.
+
+🔧 Tech suggestion:
+
+• Lightweight backend (e.g. Firebase, Supabase, or Node.js with PostgreSQL)
+• Local caching for offline use
+• Option to expand to cloud-based analytics later
+
+
+Let me know if you need a full backend architecture sketch — I can help with that too!
