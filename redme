@@ -1,0 +1,27 @@
+Project Overview: DailyDriveQuiz – Training App for Amazon Flex Drivers
+Goal:
+Develop a mobile app that provides Amazon Flex drivers with a short daily quiz to raise
+awareness of delivery errors, improve safety practices, and reduce concessions (“Delivered
+but not received” cases).
+Core Features (Version 1 / MVP)
+• Daily Quiz (3–5 questions)
+Topics: safe delivery, error prevention, app usage, customer communication
+• Push Notification around 7:00 AM
+Motivational message + reminder for the new quiz
+• Error Archive
+Manually curated, linked to relevant quiz questions
+• Driver Profile
+Progress tracking, statistics, quiz history
+Target Audience & Value
+• Target Group: Amazon Flex drivers, many with migrant backgrounds
+• Value Proposition:• Daily micro-training & awareness
+• Fewer delivery errors & customer complaints
+• Increased motivation & accountability
+• Improved delivery quality & customer satisfaction
+Language Support
+• Mandatory languages at launch: German & English
+• Additional languages (ready for integration): Turkish, Arabic, Romanian, Ukrainian,
+Russian, French, Spanish, Portuguese
+• Technical Implementation:• i18n-ready structure (e.g. JSON, gettext, react-i18next)
+• All content translatable (UI, questions, push messages, menus)
+• Language switch available in-ap
